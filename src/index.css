@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* VIRDIAN Design System - Space meets Earth */
+    
+    /* Base colors */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    /* Space theme colors */
+    --space-dark: 222 47% 8%;
+    --space-blue: 217 91% 60%;
+    --space-deep: 222 84% 5%;
+    
+    /* Earth/Farm theme colors */
+    --earth-green: 158 64% 52%;
+    --earth-green-light: 160 84% 39%;
+    --earth-brown: 25 75% 47%;
+    --soil-dark: 20 40% 20%;
+
+    /* Component colors */
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 158 64% 52%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 158 64% 52%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 25%;
+    --input: 217 33% 20%;
+    --ring: 158 64% 52%;
+
+    --radius: 1rem;
+    
+    /* Custom gradients */
+    --gradient-space: linear-gradient(135deg, hsl(222 84% 5%), hsl(222 47% 15%));
+    --gradient-earth: linear-gradient(135deg, hsl(158 64% 52%), hsl(160 84% 39%));
+    --gradient-hero: linear-gradient(180deg, hsl(222 84% 5%) 0%, hsl(222 47% 15%) 50%, hsl(158 64% 52% / 0.1) 100%);
+    
+    /* Shadows & glows */
+    --glow-green: 0 8px 32px hsl(158 64% 52% / 0.3);
+    --glow-blue: 0 8px 32px hsl(217 91% 60% / 0.3);
+    --shadow-card: 0 20px 40px hsl(222 84% 5% / 0.5);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Same theme - VIRDIAN is always dark mode optimized */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@keyframes particleFloatFast {
+  0% {
+    transform: translate3d(-6px, 0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(12px, -18px, 0) scale(1.05);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(-10px, 14px, 0) scale(1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes particleFloatSlow {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.9);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate3d(12px, -30px, 0) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes particleFloatTiny {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.8);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate3d(10px, -12px, 0) scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(-8px, 6px, 0) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+@keyframes pulseBorder {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: var(--glow-green);
+  }
+
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+
+  .hover-lift {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 40px hsl(var(--space-blue) / 0.25);
+  }
+
+  .mouse-indicator {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    border: 2px solid hsl(var(--secondary));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: hsla(var(--space-dark), 0.6);
+    backdrop-filter: blur(12px);
+    animation: pulseBorder 2.2s ease-in-out infinite;
+  }
+
+  .mouse-indicator::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border: 1px solid hsl(var(--secondary));
+    border-radius: 9999px;
+    opacity: 0.4;
+    animation: pulseBorder 2.2s ease-in-out infinite;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .text-earth-green {
+    color: hsl(var(--earth-green));
+  }
+  
+  .text-space-blue {
+    color: hsl(var(--space-blue));
+  }
+
+  .animate-particle {
+    animation: particleFloat 10s ease-in-out infinite alternate;
+  }
+
+  .animate-particle-delay {
+    animation: particleFloat 12s ease-in-out infinite alternate;
+    animation-delay: 2s;
+  }
+
+  .animate-particle-delay-2 {
+    animation: particleFloat 14s ease-in-out infinite alternate;
+    animation-delay: 4s;
+  }
+
+  .animate-particle-fast {
+    animation: particleFloatFast 8s ease-in-out infinite alternate;
+  }
+
+  .animate-particle-slow {
+    animation: particleFloatSlow 16s ease-in-out infinite alternate;
+    animation-delay: 3s;
+  }
+
+  .animate-particle-tiny {
+    animation: particleFloatTiny 12s ease-in-out infinite alternate;
+    animation-delay: 1.5s;
+  }
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  [data-reveal].is-visible,
+  [data-reveal="static"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate3d(18px, -20px, 0) scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(-10px, 12px, 0) scale(1);
+    opacity: 0.6;
+  }
+}
