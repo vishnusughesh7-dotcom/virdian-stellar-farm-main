@@ -90,7 +90,7 @@ const Hero = () => {
               variant="outline"
               className="text-lg px-8 py-6 border-secondary hover:bg-secondary/10 flex items-center justify-center gap-2 hover-lift"
               onClick={() => {
-                const element = document.querySelector("#how-to-play");
+                const element = document.querySelector("#about");
                 if (element) element.scrollIntoView({ behavior: "smooth" });
               }}
             >

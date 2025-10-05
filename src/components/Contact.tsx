@@ -29,7 +29,7 @@ const Contact = () => {
 
     try {
       setIsSubmitting(true);
-      const response = await fetch("https://formsubmit.co/ajax/nivedithavs2007@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/terrabytes2025@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const Contact = () => {
               <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
               <h4 className="text-lg font-bold text-foreground mb-2">Email Us</h4>
               <p className="text-sm text-muted-foreground">
-                nivedithavs2007@gmail.com
+                terrabytes2025@gmail.com
               </p>
             </Card>
             <Card className="p-6 bg-card/30 backdrop-blur-sm border-border text-center hover-lift">

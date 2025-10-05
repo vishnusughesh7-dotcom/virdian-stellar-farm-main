@@ -16,7 +16,6 @@ const Navigation = () => {
 
   const navLinks = [
     { name: "About", href: "#about" },
-    { name: "How to Play", href: "#how-to-play" },
     { name: "Missions", href: "#missions" },
     { name: "Resources", href: "#resources" },
     { name: "Team", href: "#team" },

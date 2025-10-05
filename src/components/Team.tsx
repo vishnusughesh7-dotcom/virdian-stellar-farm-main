@@ -4,7 +4,7 @@ import { Users } from "lucide-react";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Anugrah",
+      name: "Anugrah K S",
       role: "Team Leader",
       emoji: "🧭",
     },
@@ -14,22 +14,22 @@ const Team = () => {
       emoji: "💻",
     },
     {
-      name: "Anaswar",
+      name: "Anaswar S S",
       role: "Logic Developer",
       emoji: "🧠",
     },
     {
-      name: "Anandhakrishna",
+      name: "Anandha Krishna E",
       role: "Logic Developer",
       emoji: "🛠️",
     },
     {
-      name: "Vishnu",
+      name: "Vishnu Sughesh",
       role: "UI/UX Developer",
       emoji: "🎨",
     },
     {
-      name: "Niveditha",
+      name: "Niveditha V S",
       role: "UI/UX Developer",
       emoji: "✨",
     },

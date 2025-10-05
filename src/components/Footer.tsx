@@ -34,11 +34,6 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#how-to-play" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    How to Play
-                  </a>
-                </li>
-                <li>
                   <a href="#missions" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     Missions
                   </a>
@@ -77,13 +72,23 @@ const Footer = () => {
               </h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href="https://www.freeprivacypolicy.com/live/cf4e19b1-9920-4570-b693-cf6c2c727fa4"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Terms of Service
+                  <a
+                    href="https://www.freeprivacypolicy.com/live/89540714-6b8e-4d69-a062-8a91505b6614"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Terms & Conditions
                   </a>
                 </li>
               </ul>
